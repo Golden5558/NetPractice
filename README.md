@@ -60,7 +60,8 @@ Adresse broadcast (fin de la plage)
 Plage utilisable = adresse réseau +1 → adresse broadcast -1
 
 
--- 🧠 Grille réflexe NetPractice
+🧠 Grille réflexe NetPractice :
+
 🔵 1. Vérifier les IP et les masques
 
 Question	Que vérifier ?	✅
