@@ -58,3 +58,34 @@ Adresse réseau (début de la plage)
 Adresse broadcast (fin de la plage)
 
 Plage utilisable = adresse réseau +1 → adresse broadcast -1
+
+
+🧠 Grille réflexe NetPractice
+🔵 1. Vérifier les IP et les masques
+
+Question	Que vérifier ?	✅
+Toutes les interfaces ont-elles une IP ?	(Pas de champ vide)	
+Les masques correspondent-ils entre machines qui doivent communiquer ?	(Ex : deux machines directement connectées doivent être sur le même sous-réseau)	
+Masque cohérent ? (/24, /25, /26... respecté)	(Pas d'erreur sur la taille des réseaux)	
+🔵 2. Vérifier la communication directe (pas de routeur)
+
+Question	Que vérifier ?	✅
+Même sous-réseau ?	(même adresse réseau après application du masque)	
+Même plage IP utilisable ?	(pas hors plage)	
+🔵 3. Vérifier les passerelles (gateways)
+
+Question	Que vérifier ?	✅
+Chaque machine connaît-elle sa passerelle par défaut ?	(Gateway renseignée)	
+La passerelle existe-t-elle sur le schéma ?	(Pas d'IP "inventée")	
+La passerelle est-elle dans le même sous-réseau que la machine ?	(Sinon impossible d'atteindre)	
+🔵 4. Vérifier les routes statiques (si routeur)
+
+Question	Que vérifier ?	✅
+Route vers l'Internet ?	(0.0.0.0/0 doit pointer vers un routeur ou Internet)	
+Route vers les sous-réseaux locaux ?	(10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16, etc.)	
+Route correcte pour atteindre l’autre réseau ?	(pas de mauvaise interface ou mauvaise IP de passerelle)	
+🔵 5. Vérifier le ping théorique
+
+Question	Que vérifier ?	✅
+Si j’envoie un paquet, est-ce qu’il arrive ?	(machine → switch → routeur → internet)	
+Aucun "trou" dans le chemin ?	(toutes les routes + gateway présentes)
